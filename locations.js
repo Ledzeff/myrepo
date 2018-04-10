@@ -20,3 +20,5 @@ const checkedLandingZones = [
 	'Wailing Woods',
 	'Metal Town'
 ];
+
+const uncheckedLandingZones = [];
