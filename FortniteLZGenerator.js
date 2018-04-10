@@ -1,23 +1,22 @@
 window.onload = createCheckboxList(checkedLandingZones);
 
-const uncheckedLandingZones = []; // I realize this isn't necessary in the code, but its practice and could be used in the future
 const landingZones = document.querySelectorAll('input.list');
-const button = document.querySelector('button');
+const generateBtn = document.querySelector('button.generate');
 const result = document.querySelector('p.display');
+const checkboxBtn = document.querySelector('button.list');
 
 function createCheckboxList(list) {
 	for ( let i = 0; i < list.length; i++ ) {
 		let li = document.createElement('li');
-		let listItem = document.createElement('input');
+		let input = document.createElement('input');
 		let ul = document.querySelector('ul.list');
-		listItem.setAttribute('type', 'checkbox');
-		listItem.setAttribute('value', list[i]);
-		listItem.setAttribute('checked', " ");
-		listItem.classList.add('list');
+		input.setAttribute('type', 'checkbox');
+		input.setAttribute('value', list[i]);
+		input.setAttribute('checked', " ");
+		input.classList.add('list');
 		li.innerHTML = list[i];
-		li.appendChild(listItem);
+		li.appendChild(input);
 		ul.appendChild(li);
-
 	}
 }
 
@@ -33,8 +32,7 @@ function randomColor() {
 	return color;
 }
 
-
-button.addEventListener('click', () => {
+generateBtn.addEventListener('click', () => {
 	for ( let i = 0; i < landingZones.length; i++) {
 		let listItem = landingZones[i]
 		if (listItem.checked === true) {
@@ -49,10 +47,44 @@ button.addEventListener('click', () => {
 			} //if listItem is present in uncheckedLandingZones nothing needs to be done
 		}
 	}
-    let n = randomNumber(checkedLandingZones.length);
-    result.innerHTML = checkedLandingZones[n];
-    button.style.backgroundColor = randomColor();
-    console.log(checkedLandingZones[n]);
+	if (checkedLandingZones.length === 0) {
+		alert('You must check at least 1 box.');
+	} else {
+		let n = randomNumber(checkedLandingZones.length);
+    	result.innerHTML = checkedLandingZones[n];
+    	console.log(checkedLandingZones[n]);
+	}
+    generateBtn.style.backgroundColor = randomColor();
+})
+
+for ( let i = 0; i < landingZones.length; i++ ) {
+	landingZones[i].addEventListener('click', () => {
+		let count = 0
+		for ( let i =0; i < landingZones.length; i++ ) {
+			if (landingZones[i].checked === true) {
+				count += 1;
+			} 
+		}
+		if (count === 0) {
+			checkboxBtn.innerHTML = 'Check All Boxes';
+		} else {
+			checkboxBtn.innerHTML = 'Uncheck All Boxes';
+		}
+	})
+}
+
+checkboxBtn.addEventListener('click', () => {
+	if (checkboxBtn.innerHTML === 'Uncheck All Boxes') {
+		for (let i = 0; i < landingZones.length; i++) {
+			landingZones[i].checked = false
+			checkboxBtn.innerHTML = 'Check All Boxes';
+		} 
+	} else {
+		for (let i = 0; i < landingZones.length; i++) {
+		landingZones[i].checked = true
+		checkboxBtn.innerHTML = 'Uncheck All Boxes';
+		}
+	}	
 })
 
 console.log(landingZones.length);
