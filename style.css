@@ -1,6 +1,30 @@
+
+header {
+	background: rgba(128, 159, 255, 0.75);
+	padding: 12px;
+	margin-bottom: 20px;
+	border-radius: 6.5px;
+
+}
+
 body {
-color:white; 
-background-color:rgb(77, 166, 255);
+	font-family: helvetica;
+	color:white; 
+	background-image: url("images/fortnitemap.jpg");
+	background-repeat: no-repeat;
+	background-position: right top;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+footer {
+	padding: 20px;
+	margin-top: 40px;
+	font-size: 26px;
+	font-weight: bold;
+	background-color: rgba(128, 159, 255, 0.75);
+	border-radius: 6.5px;
+
 }
 
 button {
@@ -10,6 +34,55 @@ button {
   outline: 0;
   margin:auto;
   display:block;
-  background-color:limegreen;
 }
 
+div.list {
+	background: rgba(0, 77, 26, 0.85);
+	border-radius: 6.5px;
+}
+
+.column {
+	margin-right: 10px;
+	margin-left: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+h1 {
+	text-align: center;
+	font-size: 50px;
+}
+
+form.list label {
+	font-size: 20px;
+}
+
+input{type='checkbox'}:checked + label {
+	color: rgb(128, 159, 255);
+}
+
+input{type='checkbox'}:unchecked + label {
+	color: white;
+}
+
+input{type='checkbox'}:hover + label {
+	color:#9966ff;
+}
+
+#display {
+	text-align: center;
+	font-weight: bold;
+	font-size: 30px;
+	background-color:rgb(128, 159, 255, 0.75);
+	padding-top: 7px;
+	padding-bottom: 7px;
+}
+
+.row {
+	display:flex;
+}
+
+.column {
+	flex: 50%;
+	height: 650.5px;
+}
