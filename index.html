@@ -5,24 +5,28 @@
 			<link rel='stylesheet' href='style.css'>
 			<TITLE>LANDING ZONE GENERATOR</TITLE>
 		</head>
+		<header>
+			<h1>LANDING ZONE GENERATOR</h1>
+		</header>
 		<body>
-			<h1 
-				style='text-align:center;'>
-				LANDING ZONE GENERATOR
-			</h1>
 			<button class='generate'>Tell Me Where To Land!</button>
-			<p class='display'> </p>
-			<div class='list'>
-				Check all locations you want included in the generator.
-				<button class='list'>Uncheck All Boxes</button>
-				<form>
-					<ul class='list'>
-					</ul>
-				</form>
+			<p id='display'> Where will you be landing? </p>
+			<div class='row'>
+				<div class='list column'>
+					<h2>Check all locations you want included in the generator.</h2>
+					<button class='list'>Uncheck All Boxes</button>
+					<form class='list'>
+					</form>
+				</div>
+				<div class='column twitter'>
+					<a class="twitter-timeline" data-height="600" data-theme="light" href="https://twitter.com/FortniteGame?ref_src=twsrc%5Etfw">Tweets by FortniteGame</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+				</div>
 			</div>
+			<footer>
+				A website by Haydon Smiley
+			</footer>
 			<script src='locations.js'></script>
 			<script src='FortniteLZGenerator.js'></script>
 		</body>
 	</html>
-
 
